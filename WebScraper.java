@@ -8,18 +8,18 @@ import java.io.IOException;
 public class WebScraper {
 
     public static void main(String[] args) {
-        String url = "https://bbc.com"; // You can change this to any URL you like
+        String url = "https://bbc.com"; 
 
         try {
-            // Fetch the document
+            
             Document doc = Jsoup.connect(url).get();
 
-            // Title of the webpage
+            
             String title = doc.title();
             System.out.println("Title: " + title);
             System.out.println();
 
-            // Headings (h1 to h6)
+            
             System.out.println("Headings:");
             for (int i = 1; i <= 6; i++) {
                 Elements headings = doc.select("h" + i);
@@ -30,7 +30,7 @@ public class WebScraper {
 
             System.out.println();
 
-            // All links
+            
             System.out.println("Links:");
             Elements links = doc.select("a[href]");
             for (Element link : links) {
